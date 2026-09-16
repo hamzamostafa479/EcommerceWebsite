@@ -1,0 +1,25 @@
+{
+  "name": "ecommerce-project",
+  "version": "1.0.0",
+  "description": "Ecommerce Website Build Using Asp.Net Mvc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamzamostafa479/EcommerceWebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/hamzamostafa479/EcommerceWebsite/issues"
+  },
+  "homepage": "https://github.com/hamzamostafa479/EcommerceWebsite#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
