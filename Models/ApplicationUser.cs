@@ -4,6 +4,6 @@ namespace Ecommerce_Project.Models
 {
   public class ApplicationUser : IdentityUser
   {
-    public List<Order> Orders { get; set; } = new();
+    public List<Order> Orders { get; set; } = new List<Order>();
   }
 }
