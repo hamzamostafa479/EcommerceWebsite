@@ -4,37 +4,38 @@
   ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<div class="max-w-3xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+  <div class="bg-white shadow-md rounded-lg p-6">
+    <h1 class="text-2xl font-semibold text-gray-800 mb-2">Create Order</h1>
+    <p class="text-sm text-gray-500 mb-6">Add a new order record.</p>
 
-<h4>Order</h4>
-<hr />
-<div class="row">
-  <div class="col-md-4">
-    <form asp-action="Create">
-      <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-      <div class="form-group">
-        <label asp-for="OrderDate" class="control-label"></label>
-        <input asp-for="OrderDate" class="form-control" />
-        <span asp-validation-for="OrderDate" class="text-danger"></span>
+    <form asp-action="Create" class="space-y-6">
+      <div asp-validation-summary="ModelOnly" class="text-red-600 text-sm"></div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label asp-for="OrderDate" class="block text-sm font-medium text-gray-700"></label>
+          <input asp-for="OrderDate" type="date" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
+          <span asp-validation-for="OrderDate" class="text-red-600 text-sm"></span>
+        </div>
+
+        <div>
+          <label asp-for="TotalAmount" class="block text-sm font-medium text-gray-700"></label>
+          <input asp-for="TotalAmount" type="number" step="0.01" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
+          <span asp-validation-for="TotalAmount" class="text-red-600 text-sm"></span>
+        </div>
       </div>
-      <div class="form-group">
-        <label asp-for="TotalAmount" class="control-label"></label>
-        <input asp-for="TotalAmount" class="form-control" />
-        <span asp-validation-for="TotalAmount" class="text-danger"></span>
-      </div>
-      @* <div class="form-group">
-                <label asp-for="UserId" class="control-label"></label>
-                <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
-            </div> *@
-      <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-primary" />
+
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <button type="submit" class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            Create
+          </button>
+          <a asp-action="Index" class="text-sm text-gray-600 hover:text-gray-900">Cancel</a>
+        </div>
       </div>
     </form>
   </div>
-</div>
-
-<div>
-  <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

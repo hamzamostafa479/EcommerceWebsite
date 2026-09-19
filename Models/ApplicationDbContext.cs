@@ -1,25 +1,17 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Ecommerce_Project.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.Build.Tasks.Deployment.Bootstrapper;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
 
 namespace Ecommerce_Project.Models
 {
-  public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+  public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser>(options)
   {
-    public ApplicationDbContext(DbContextOptions options) : base(options)
-    {
-
-    }
-    public ApplicationDbContext()
-    {
-
-    }
-
     public DbSet<Order> Orders { get; set; }
+
     public DbSet<OrderItem> OrderItems { get; set; }
     public DbSet<Product> Products { get; set; }
     public DbSet<Category> Categories { get; set; }
-
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -39,6 +31,7 @@ namespace Ecommerce_Project.Models
           new Product { ProductId = 3, Name = "Cotton T-Shirt", Description = "100% cotton comfortable t-shirt", Price = 19.99m, StockQuantity = 200, CategoryId = 2, IsActive = true, ImageUrl = "https://images.unsplash.com/photo-1651761179569-4ba2aa054997?q=80&w=400" },
           new Product { ProductId = 4, Name = "C# Programming Guide", Description = "Comprehensive C# programming book", Price = 39.99m, StockQuantity = 75, CategoryId = 3, IsActive = true, ImageUrl = "https://plus.unsplash.com/premium_photo-1764695579456-9e6f13928281?q=80&w=400" }
       );
+
     }
   }
 }

@@ -24,7 +24,7 @@ namespace Ecommerce_Project.Models
     [Precision(18, 2)]
     public decimal TotalAmount { get; set; }
 
-    public OrderStatus status { get; set; } = OrderStatus.Pending;
+    public OrderStatus Status { get; set; } = OrderStatus.Pending;
 
     [StringLength(500)]
     public string? ShippingAddress { get; set; }

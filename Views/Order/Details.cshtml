@@ -4,33 +4,36 @@
   ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<div class="max-w-3xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+  <div class="bg-white shadow-sm rounded-lg border border-gray-200 overflow-hidden">
+    <div class="px-6 py-5">
+      <h1 class="text-2xl font-semibold text-gray-900">Order Details</h1>
+      <p class="mt-1 text-sm text-gray-500">Details for order <span class="font-medium text-gray-700">#@Model?.OrderId</span></p>
+    </div>
 
-<div>
-  <h4>Order</h4>
-  <hr />
-  <dl class="row">
-    <dt class="col-sm-2">
-      @Html.DisplayNameFor(model => model.OrderDate)
-    </dt>
-    <dd class="col-sm-10">
-      @Html.DisplayFor(model => model.OrderDate)
-    </dd>
-    <dt class="col-sm-2">
-      @Html.DisplayNameFor(model => model.TotalAmount)
-    </dt>
-    <dd class="col-sm-10">
-      @Html.DisplayFor(model => model.TotalAmount)
-    </dd>
-    <dt class="col-sm-2">
-      @Html.DisplayNameFor(model => model.User)
-    </dt>
-    <dd class="col-sm-10">
-      @Html.DisplayFor(model => model.User.Id)
-    </dd>
-  </dl>
-</div>
-<div>
-  <a asp-action="Edit" asp-route-id="@Model?.OrderId">Edit</a> |
-  <a asp-action="Index">Back to List</a>
+    <div class="px-6 pb-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+        <div class="text-sm text-gray-600 font-medium">@Html.DisplayNameFor(model => model.OrderDate)</div>
+        <div class="text-sm text-gray-800">@Html.DisplayFor(model => model.OrderDate)</div>
+
+        <div class="text-sm text-gray-600 font-medium">@Html.DisplayNameFor(model => model.TotalAmount)</div>
+        <div class="text-sm text-gray-800">@Html.DisplayFor(model => model.TotalAmount)</div>
+
+        <div class="text-sm text-gray-600 font-medium">@Html.DisplayNameFor(model => model.User)</div>
+        <div class="text-sm text-gray-800">@Html.DisplayFor(model => model.User.Id)</div>
+      </div>
+
+      <hr class="my-6 border-gray-200" />
+
+      <div class="flex flex-wrap gap-3">
+        <a asp-action="Edit" asp-route-id="@Model?.OrderId" class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          Edit
+        </a>
+
+        <a asp-action="Index" class="inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium rounded-md text-gray-700 hover:bg-gray-50">
+          Back to List
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
