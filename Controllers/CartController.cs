@@ -54,7 +54,7 @@ namespace Ecommerce_Project.Controllers
 
       SaveCart(cart);
       TempData["Message"] = $"{product.Name} added to cart!";
-      return RedirectToAction(nameof(Index));
+      return RedirectToAction(nameof(Index) , nameof(Product));
     }
 
 
